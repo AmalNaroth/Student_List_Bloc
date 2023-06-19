@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:studentlistbloc/application/bottomnavbar/bottomnav_bloc.dart';
+import 'package:studentlistbloc/application/search/studentsearch_bloc.dart';
 import 'package:studentlistbloc/application/studentlist/studentlist_bloc.dart';
 import 'package:studentlistbloc/application/userimage/userimage_bloc.dart';
 import 'package:studentlistbloc/domain/dbfunction/databasefunction.dart';
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
          BlocProvider(
           create: (context) => UserimageBloc(),
         ),
+        BlocProvider(
+          create: (context) => StudentsearchBloc(),
+        )
       ],
       child: MaterialApp(
           title: 'Flutter Demo',

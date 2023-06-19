@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:studentlistbloc/application/bottomnavbar/bottomnav_bloc.dart';
 import 'package:studentlistbloc/domain/dbfunction/databasefunction.dart';
+import 'package:studentlistbloc/presentation/search/studentsearch.dart';
 import 'package:studentlistbloc/presentation/studentadd/studentadd.dart';
+import 'package:studentlistbloc/presentation/studentdetails/studentdetatils.dart';
 import 'package:studentlistbloc/presentation/studentlisting/studentlisting.dart';
 
 class ScreenBottomNav extends StatelessWidget {
@@ -10,10 +12,11 @@ class ScreenBottomNav extends StatelessWidget {
 
   List<Widget> totalScreens =  [
     const ScreenStudentListing(),
+    StudentSearch(),
     ScreenStudentAdd()
   ];
 
-  List<String> screenNames = const ["Student List", "Add Student"];
+  List<String> screenNames = const ["Student List","Search", "Add Student"];
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +43,9 @@ class ScreenBottomNav extends StatelessWidget {
               items: const [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.person), label: "Student List"),
+                    BottomNavigationBarItem(icon: Icon(Icons.search),label: "Search"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.add), label: "Add Student")
+                    icon: Icon(Icons.add), label: "Add Student"),
               ],
             ));
       },
